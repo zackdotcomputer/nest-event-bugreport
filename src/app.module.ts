@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PrismaModule } from './prisma/prisma.module';
+import { ProxyModule } from './proxy/proxy.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
-    PrismaModule,
+    ProxyModule,
     EventEmitterModule.forRoot({
       verboseMemoryLeak: true,
     }),
