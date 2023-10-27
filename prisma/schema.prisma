@@ -1,0 +1,24 @@
+// This is the schema for all Addition models.
+// Because Prisma generates database clients with a 1:1 relationship between this schema and the database's schema,
+// this is the file that covers everything in the PRIMARY database.
+//
+// If, in the future, we have multiple database shards that handle different work, each will need its own Prisma schema.
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+// Setup and configuration before we get into the models
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = []
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model World {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
